@@ -4,5 +4,3 @@ excerpt: back to the front of the library
 ---
 ## [[strata]]
 ![[strata]]
-
-/back
