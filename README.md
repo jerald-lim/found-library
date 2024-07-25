@@ -1,2 +1,4 @@
-# linked-blog-starter-md
-These are the markdown files for the [linked-blog-starter](https://github.com/matthewwong525/linked-blog-starter) repository
+# found library
+a library seeking to incite deeper engagement with the found items it hosts
+
+facilitated by @isapip @jerald-lim @qiutongzhai
