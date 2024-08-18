@@ -5,6 +5,9 @@ tags:
   - Boink
 ---
 
+[[Severance 1x01 Mister.pdf]]
+
+![[Severance 1x01 Mister.pdf]]
 
 hello world
 
