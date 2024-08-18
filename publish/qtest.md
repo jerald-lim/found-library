@@ -1,3 +1,11 @@
+---
+dateCreated: 2024/08/17
+dateModified: 2024/08/17
+tags:
+  - Boink
+---
+
+
 hello world
 
 sadfasdfasdfasdfasd
@@ -14,3 +22,5 @@ I wan to **bold**
 [[strata]]
 
 [[isa-test]]
+
+![[strata.jpg]]
