@@ -25,6 +25,7 @@ if a node you wish to create already exists, please look at it and decide if you
 			1. if there is no title variable, the file name will be the page name
 		5. `excerpt` this is the text that will appear 
 3. use `[[ ]]` double square brackets to link to other nodes - try to make as many links as possible
+	1. you can also 'pre'-create links/nodes and click through to fill them in (now or later); if the pages are created later the links will activate
 4. use `#`, `##`, etc. for level headings as needed
 5. you should be able to paste images (and other files) directly into nodes as well
 	1. check to make sure the files are present in the attachment folder
