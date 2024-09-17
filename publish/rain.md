@@ -12,7 +12,7 @@ do you know that we the peak of life's pyramid have not figured out how to breed
 
 ![[Pasted image 20240917163548.png]]
 
-i found you frolicking in the heavy downpour. a bird's hair is feather is hair combed back by rainwater 
+i found you frolicking in the heavy downpour. a bird's hair is [[feather]] is hair combed back by rainwater 
 
 ![[Pasted image 20240917164509.png]]
 
