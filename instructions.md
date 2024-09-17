@@ -18,7 +18,7 @@ if a node you wish to create already exists, please look at it and decide if you
 2. type `---` when starting a new document to open up the properties panel
 	1. you should input the following variables where possible
 		1. `dateCreated` if this is a new node
-		2. `dateUpdate01` if this is the first update
+		2. `dateUpdated01` if this is the first update
 			1. `dateUpdateXX` for each subsequent update
 		3. `tags` 3-5 tags that are conceptually/abstractly related to the node
 		4. `title` if the page title needs to be different from the file name (for example if you want the node to appear with a / a character that cannot be part of the file name)
