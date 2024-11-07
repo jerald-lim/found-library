@@ -15,3 +15,5 @@ can a wave be still? chlorofied into a still temporary pattern, eroded by subseq
 look at how the plastic crests and falls, do not tell me that is not the ocean, it is our toxic progeny, our lovechild
 
 ![[Pasted image 20240917163727.png]]
+
+sound waves ocean waves cycles return homecoming nostos
