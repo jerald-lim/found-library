@@ -11,4 +11,3 @@ Supple era, searching for [[a reflection of the sun]]
 
 Or something in the [[forest of Clementi]].
 
-BOo
