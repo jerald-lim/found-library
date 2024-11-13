@@ -7,7 +7,6 @@ tags:
   - roar
   - immersive
 ---
-
 do you know that we the peak of life's pyramid have not figured out how to breed eels in captivity? roleplaying mastery is a funny affair - why did i seek to capture rain by means of other bodies?
 
 ![[Pasted image 20240917163548.png]]
