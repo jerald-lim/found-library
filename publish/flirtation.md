@@ -1,0 +1,1 @@
+crossing the intersection in japantown, san francisco, with an old friend, a college flatmate, whom i had not seen in years — you holler at me with a light brush on the back of my exposed left ankle. oops the wind made me bump into you you say, but i'm not buying it for a second, as you come to a rest on the asphalt, no trace of the wind despite the chilly spring weather.
