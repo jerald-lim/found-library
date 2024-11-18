@@ -7,7 +7,7 @@ tags:
   - vision
   - negativeSpace
 ---
-in the *daodejing*, book 15 reflects on the use of what isn't — the use of a [[wheel]] stems from the emptiness between spokes, of a [[vessel]] the emptiness between the fired clay, of a [[house]] the emptiness between its walls; what exists (materially) is tied to profit, but what isn't is tied to use.
+`in the *daodejing*, book 15 reflects on the use of what isn't — the use of a [[wheel]] stems from the emptiness between spokes, of a [[vessel]] the emptiness between the fired clay, of a [[house]] the emptiness between its walls; what exists (materially) is tied to profit, but what isn't is tied to use.
 
 with [[buttons]], we might marvel at the [[patterns]] on their [[surface]],  of [[strata]] and [[paint]]
 
