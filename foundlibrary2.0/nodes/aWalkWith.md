@@ -18,6 +18,9 @@ Qiutong Zhai
 I_S_L_A_N_D_S  
 6 July – 22 August"
 
-![[awalkwith_archivephoto2.png]]
-
+And then these are some of the things that happened: 
 ![[awalkwith_archivephoto5.mov]]
+![[awalkwith_archivephoto4.png]]
+![[awalkwith_archivephoto3.jpg]]
+![[awalkwith_archivephoto6.png]]
+![[awalkwith_archivephoto2.png]]![[a walk with participant’s worksheet .pdf]]
