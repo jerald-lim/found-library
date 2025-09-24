@@ -3,7 +3,7 @@ dateCreated: 2024-09-19
 tags:
   - brown
 ---
-[[20240730_154918.jpg]]
+[[20240730154918.jpg]]
 
 [[Brittle]] and [[brown]], your [[swirls]] suggest a once
 
