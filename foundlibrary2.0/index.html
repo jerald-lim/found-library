@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Stellar Network - Interactive Node Constellation</title>
+  <title>found library</title>
   <style>
     body {
       margin: 0;
@@ -448,7 +448,7 @@
       modalBody.innerHTML = `<p>Loading details for <strong>${nodes[idx].label}</strong>...</p>`;
 
       // Escape special characters for filename
-      const mdFilename = "/nodes/" + nodes[idx].id.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() + ".md";
+      const mdFilename = "nodes/" + nodes[idx].id.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() + ".md";
       try {
         const resp = await fetch(mdFilename);
         if (resp.ok) {
