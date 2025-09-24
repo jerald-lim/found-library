@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stellar Network - Interactive Node Constellation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      cursor: none;
+    }
+    .custom-cursor {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+    #network-canvas {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw; height: 100vh;
+      z-index: 1;
+    }
+    .object-menu {
+      position: fixed;
+      top: 100px;
+      right: 0;
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 2;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px 0 0 12px;
+      box-shadow: 0 2px 18px rgba(255, 255, 255, 0.1);
+      max-height: 80vh;
+      overflow-y: auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .object-square {
+      width: 90px;
+      height: 65px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: none;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 5px;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+    }
+    .object-square.active {
+      border-color: #fff;
+      box-shadow: 0 0 26px 6px rgba(255, 255, 255, 0.4);
+    }
+    .modal {
+      display: none;
+      position: fixed; z-index: 10;
+      left: 0; top: 0; width: 100%; height: 100%;
+      overflow: auto; 
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal-content {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 500px;
+      max-width: 90vw;
+      position: relative;
+      box-shadow: 0px 8px 48px rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      word-wrap: break-word;
+    }
+    .close {
+      color: #fff;
+      position: absolute;
+      right: 18px; top: 12px;
+      font-size: 34px;
+      font-weight: bold;
+      cursor: none;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .close:hover {
+      opacity: 1;
+    }
+    @media (max-width:500px) {
+      .modal-content { width:90vw; }
+      .object-menu { width: 65vw; max-height: 40vh; }
+      .object-square { width:45vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-cursor" id="cursor"></div>
+  <canvas id="network-canvas"></canvas>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h2 id="modal-title"></h2>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <div class="object-menu"></div>
+  <script>
+    // Cursor smooth movement
+    const cursor = document.getElementById('cursor');
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    function lerp(start, end, t) { return start + (end - start) * t; }
+    function animateCursor() {
+      cursorX = lerp(cursorX, mouseX, 0.2);
+      cursorY = lerp(cursorY, mouseY, 0.2);
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Data
+    const BG_IMAGE_SIZE = 600;
+    const objects = [
+      { name: "", contains: ["duck", "yellow", "dirty", "roadside", "bus 124", "isa", "a walk with", "fort canning", "ghee", "ghee's walk with worksheet", "phylliam", "float", "guang", "guang's artwork proposal", "voiceless", "pictures of guang's art"], color: "#ffeb3b", iconImage: "images/rubberduck.png", bgImage: "images/rubberduck.png" },
+      { name: "", contains: ["isa", "singapore", "roadside", "rusty", "thin", "malaysia", "liyana", "liyana's writings"],
+        color: "#808080",
+        iconImage: "images/metaltagfront.png",
+        bgImage: "images/metaltagfront.png" },
+      { name: "", contains: ["jerald", "becoming ___", "gillman barracks", "lock road", "earth trail", "rain", "rain poem draft", "salt lake city", "planting the rain", "rhizocinema", "patternfaring", "experimenting", "laughter", "galloping cohort"], color: "#80c904", iconImage: "images/rainleaf.png", bgImage: "images/rainleaf.png" },
+      { name: "", contains: ["qiutong", "lantau island", "fish", "bone", "val", "a walk with", "pipes", "val's worksheet", "teck", "teck's proposal", "wishbone", "teck's artwork"], color: "#41add6", iconImage: "images/pipefishbone.png", bgImage: "images/wishfishbone.png" }
+    ];
+    const nodes = [
+      { id: "duck", label: "duck", category: "visual" },
+      { id: "yellow", label: "yellow", category: "concept" },
+      { id: "dirty", label: "dirty", category: "concept" },
+      { id: "roadside", label: "roadside", category: "place" },
+      { id: "bus 124", label: "bus 124", category: "concept" },
+      { id: "isa", label: "isa", category: "person" },
+      { id: "a walk with", label: "a walk with", category: "concept" },
+      { id: "fort canning", label: "fort canning", category: "place" },
+      { id: "ghee", label: "ghee", category: "person" },
+      { id: "ghee's walk with worksheet", label: "worksheet", category: "visual" },
+      { id: "phylliam", label: "phylliam", category: "person" },
+      { id: "float", label: "float", category: "visual" },
+      { id: "guang", label: "guang", category: "person" },
+      { id: "guang's artwork proposal", label: "guang's proposal", category: "visual" },
+      { id: "voiceless", label: "voiceless", category: "concept" },
+      { id: "pictures of guang's art", label: "guang's art", category: "visual" },
+      { id: "?", label: "?", category: "concept" },
+      { id: "singapore", label: "singapore", category: "place" },
+      { id: "rusty", label: "rusty", category: "concept" },
+      { id: "thin", label: "thin", category: "concept" },
+      { id: "malaysia", label: "malaysia", category: "place" },
+      { id: "liyana", label: "liyana", category: "person" },
+      { id: "liyana's writings", label: "liyana's writings", category: "visual" },
+      { id: "jerald", label: "jerald", category: "person" },
+      { id: "becoming ___", label: "becoming ___", category: "concept" },
+      { id: "gillman barracks", label: "gillman barracks", category: "place" },
+      { id: "lock road", label: "lock road", category: "place" },
+      { id: "earth trail", label: "earth trail", category: "place" },
+      { id: "rain", label: "rain", category: "concept" },
+      { id: "rain poem draft", label: "rain poem draft", category: "visual" },
+      { id: "salt lake city", label: "salt lake city", category: "place" },
+      { id: "planting the rain", label: "planting the rain", category: "visual" },
+      { id: "rhizocinema", label: "rhizocinema", category: "concept" },
+      { id: "patternfaring", label: "patternfaring", category: "concept" },
+      { id: "experimenting", label: "experimenting", category: "concept" },
+      { id: "laughter", label: "laughter", category: "concept" },
+      { id: "galloping cohort", label: "galloping cohort", category: "concept" },
+      { id: "qiutong", label: "qiutong", category: "person" },
+      { id: "lantau island", label: "lantau island", category: "place" },
+      { id: "fish", label: "fish", category: "visual" },
+      { id: "bone", label: "bone", category: "concept" },
+      { id: "val", label: "val", category: "person" },
+      { id: "pipes", label: "pipes", category: "visual" },
+      { id: "val's worksheet", label: "val's worksheet", category: "visual" },
+      { id: "teck", label: "teck", category: "person" },
+      { id: "teck's proposal", label: "teck's proposal", category: "visual" },
+      { id: "wishbone", label: "wishbone", category: "visual" },
+      { id: "teck's artwork", label: "teck's artwork", category: "visual" }
+    ];
+    const links = [
+      {from:"duck",to:"yellow"},{from:"yellow",to:"dirty"},{from:"dirty",to:"roadside"},{from:"roadside",to:"bus 124"},{from:"bus 124",to:"isa"},{from:"isa",to:"a walk with"},{from:"a walk with",to:"fort canning"},{from:"fort canning",to:"ghee"},{from:"ghee",to:"ghee's walk with worksheet"},{from:"ghee's walk with worksheet",to:"phylliam"},{from:"phylliam",to:"float"},{from:"float",to:"guang"},{from:"guang",to:"guang's artwork proposal"},{from:"guang's artwork proposal",to:"voiceless"},{from:"voiceless",to:"pictures of guang's art"},{from:"pictures of guang's art",to:"?"},{from:"isa",to:"roadside"},{from:"singapore",to:"roadside"},{from:"roadside",to:"rusty"},{from:"rusty",to:"thin"},{from:"thin",to:"malaysia"},{from:"malaysia",to:"liyana"},{from:"liyana",to:"liyana's writings"},{from:"liyana's writings",to:"?"},{from:"jerald",to:"becoming ___"},{from:"becoming ___",to:"gillman barracks"},{from:"gillman barracks",to:"lock road"},{from:"lock road",to:"earth trail"},{from:"earth trail",to:"rain"},{from:"rain",to:"rain poem draft"},{from:"rain poem draft",to:"salt lake city"},{from:"salt lake city",to:"planting the rain"},{from:"planting the rain",to:"rhizocinema"},{from:"rhizocinema",to:"patternfaring"},{from:"patternfaring",to:"experimenting"},{from:"experimenting",to:"laughter"},{from:"laughter",to:"galloping cohort"},{from:"galloping cohort",to:"?"},{from:"qiutong",to:"lantau island"},{from:"lantau island",to:"fish"},{from:"fish",to:"bone"},{from:"bone",to:"val"},{from:"val",to:"a walk with"},{from:"a walk with",to:"pipes"},{from:"pipes",to:"val's worksheet"},{from:"val's worksheet",to:"teck"},{from:"teck",to:"teck's proposal"},{from:"teck's proposal",to:"wishbone"},{from:"wishbone",to:"teck's artwork"}
+    ];
+
+    // Draw/positioning state
+    let nodeBasePositions = [];
+    let nodePositions = [];
+    let groupCenters = [];
+    let hoverObjectIdx = null;
+    let selectedObjectIdx = null;
+    let hoveredNodeIdx = null;
+    let magnificationCenter = null;
+    const MIN_NODE_DISTANCE = 80;
+    const backgroundImages = new Map();
+
+    // Initial placement (run only once after setup/resize)
+    function initialNodePlacement() {
+      const w = canvas.width, h = canvas.height;
+      const groupCount = objects.length;
+      const R = Math.min(w, h) / 2.5;
+      groupCenters = [];
+
+      for (let gi = 0; gi < groupCount; gi++) {
+        const theta = (2 * Math.PI * gi) / groupCount - Math.PI / 2;
+        groupCenters[gi] = {
+          x: w / 2 + R * 0.6 * Math.cos(theta),
+          y: h / 2 + R * 0.6 * Math.sin(theta)
+        };
+      }
+      nodeBasePositions = nodes.map((node, ni) => {
+        const groups = objects.map((o, oi) => o.contains.includes(node.id) ? oi : -1).filter(ix => ix !== -1);
+        if (groups.length === 1) {
+          const groupIdx = groups[0];
+          const others = objects[groupIdx].contains;
+          const groupMemberCount = others.length;
+          const angle = (2 * Math.PI * others.indexOf(node.id)) / groupMemberCount + (Math.random() - 0.5) * 0.5;
+          const rBase = 100 + 50 * Math.random();
+          return {
+            x: groupCenters[groupIdx].x + rBase * Math.cos(angle),
+            y: groupCenters[groupIdx].y + rBase * Math.sin(angle)
+          };
+        } else if (groups.length > 1) {
+          let centroidX = 0, centroidY = 0;
+          groups.forEach(gidx => {
+            centroidX += groupCenters[gidx].x;
+            centroidY += groupCenters[gidx].y;
+          });
+          centroidX /= groups.length;
+          centroidY /= groups.length;
+          return {
+            x: centroidX + 30 * (Math.random() - 0.5),
+            y: centroidY + 30 * (Math.random() - 0.5)
+          };
+        } else {
+          return {
+            x: w * 0.5 + (Math.random() - 0.5) * (w * 0.3),
+            y: h * 0.5 + (Math.random() - 0.5) * (h * 0.3)
+          };
+        }
+      });
+
+      nodePositions = nodeBasePositions.map(p => ({x: p.x, y: p.y}));
+
+      // Stabilize with collision resolution
+      for (let i = 0; i < 10; i++) {
+        if (!resolveCollisions()) break;
+      }
+    }
+
+    function resolveCollisions() {
+      let moved = false;
+      const minDistance = MIN_NODE_DISTANCE;
+      for (let i = 0; i < nodePositions.length; i++) {
+        for (let j = i + 1; j < nodePositions.length; j++) {
+          const dx = nodePositions[j].x - nodePositions[i].x;
+          const dy = nodePositions[j].y - nodePositions[i].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < minDistance && dist > 0) {
+            const overlap = minDistance - dist;
+            const pushX = (dx / dist) * (overlap / 2);
+            const pushY = (dy / dist) * (overlap / 2);
+            nodePositions[i].x -= pushX;
+            nodePositions[i].y -= pushY;
+            nodePositions[j].x += pushX;
+            nodePositions[j].y += pushY;
+            moved = true;
+          }
+        }
+      }
+      return moved;
+    }
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initialNodePlacement();
+      drawNetwork();
+    }
+
+    // Canvas setup
+    const canvas = document.getElementById("network-canvas");
+    const ctx = canvas.getContext("2d");
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    // Node gravity & magnification
+    function getAnimatedPosition(idx) {
+      let pos = { x: nodePositions[idx].x, y: nodePositions[idx].y };
+
+      if (magnificationCenter) {
+        const dx = pos.x - magnificationCenter.x;
+        const dy = pos.y - magnificationCenter.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const gravityRadius = 150;
+
+        // Cursor gravity
+        if (dist < gravityRadius && dist > 8) {
+          const pullStrength = 0.08 * (1 - dist / gravityRadius);
+          pos.x -= dx * pullStrength;
+          pos.y -= dy * pullStrength;
+        }
+
+        // Magnify node if it's hovered
+        if (hoveredNodeIdx === idx && dist < 20) {
+          pos.x += dx * 0.15;
+          pos.y += dy * 0.15;
+        }
+      }
+      return pos;
+    }
+
+    // Draw background
+    function drawBackground() {
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, '#0a0a0a');
+      gradient.addColorStop(0.5, '#1a1a2e');
+      gradient.addColorStop(1, '#16213e');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      if (selectedObjectIdx !== null || hoverObjectIdx !== null) {
+        const activeIdx = hoverObjectIdx !== null ? hoverObjectIdx : selectedObjectIdx;
+        const object = objects[activeIdx];
+        if (object.bgImage) {
+          drawBackgroundImageAt(object.bgImage, groupCenters[activeIdx].x, groupCenters[activeIdx].y);
+        }
+      }
+    }
+    function drawBackgroundImageAt(imageUrl, centerX, centerY) {
+      let img = backgroundImages.get(imageUrl);
+      if (!img) {
+        img = new Image();
+        img.src = imageUrl;
+        img.onload = () => { drawNetwork(); };
+        backgroundImages.set(imageUrl, img);
+      }
+      if (img && img.complete) {
+        ctx.save();
+        ctx.globalAlpha = 0.25;
+        ctx.translate(centerX - BG_IMAGE_SIZE / 2, centerY - BG_IMAGE_SIZE / 2);
+        ctx.drawImage(img, 0, 0, BG_IMAGE_SIZE, BG_IMAGE_SIZE);
+        ctx.restore();
+      }
+    }
+
+    // Draw nodes/links
+    function drawNetwork() {
+      drawBackground();
+
+      const activeIdx = hoverObjectIdx !== null ? hoverObjectIdx : selectedObjectIdx;
+      const activeColor = activeIdx !== null ? objects[activeIdx].color : null;
+      const activeNodes = activeIdx !== null ? new Set(objects[activeIdx].contains) : new Set();
+
+      // Draw links
+      links.forEach(link => {
+        const fromIdx = nodes.findIndex(n => n.id === link.from);
+        const toIdx = nodes.findIndex(n => n.id === link.to);
+        if (fromIdx === -1 || toIdx === -1) return;
+        const fromPos = getAnimatedPosition(fromIdx);
+        const toPos = getAnimatedPosition(toIdx);
+
+        let highlight = false, color = "rgba(255, 255, 255, 0.4)", alpha = 0.6;
+        if (activeIdx !== null && activeNodes.has(link.from) && activeNodes.has(link.to)) {
+          highlight = true;
+          color = activeColor;
+          alpha = 0.9;
+        }
+        ctx.save();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = highlight ? 3 : 1.5;
+        ctx.globalAlpha = alpha;
+        ctx.beginPath();
+        ctx.moveTo(fromPos.x, fromPos.y);
+        ctx.lineTo(toPos.x, toPos.y);
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      // Draw nodes
+      nodes.forEach((node, idx) => {
+        const pos = getAnimatedPosition(idx);
+        const highlight = activeIdx !== null && activeNodes.has(node.id);
+        let fillColor = highlight ? activeColor : "rgba(255, 255, 255, 0.9)";
+        let strokeColor = highlight ? activeColor : "rgba(255, 255, 255, 0.7)";
+        let nodeSize = 8;
+        if (idx === hoveredNodeIdx) {
+          strokeColor = "#ffeb3b";
+          nodeSize = 14;
+        }
+        ctx.save();
+        ctx.globalAlpha = 1;
+        if (highlight) {
+          ctx.shadowColor = activeColor;
+          ctx.shadowBlur = 15;
+        }
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, nodeSize, 0, 2 * Math.PI);
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+        ctx.strokeStyle = strokeColor;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.fillStyle = "rgba(255, 255, 255, 0.93)";
+        ctx.font = "12px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.fillText(node.label, pos.x, pos.y + nodeSize + 8);
+        ctx.restore();
+      });
+    }
+
+    // Animation loop (for responsiveness)
+    function animationLoop() {
+      drawNetwork();
+      requestAnimationFrame(animationLoop);
+    }
+    animationLoop();
+
+    // Modal
+    async function showNodeModal(idx) {
+      const modal = document.getElementById("modal");
+      const modalTitle = document.getElementById("modal-title");
+      const modalBody = document.getElementById("modal-body");
+
+      // Show modal immediately with loading message
+      modal.style.display = "block";
+      modalTitle.textContent = nodes[idx].label;
+      modalBody.innerHTML = `<p>Loading details for <strong>${nodes[idx].label}</strong>...</p>`;
+
+      // Escape special characters for filename
+      const mdFilename = "/nodes/" + nodes[idx].id.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() + ".md";
+      try {
+        const resp = await fetch(mdFilename);
+        if (resp.ok) {
+          const mdContent = await resp.text();
+          modalBody.innerHTML = `<pre style="white-space: pre-wrap; font-family:monospace;color:#eee;">${mdContent}</pre>`;
+        } else {
+          modalBody.innerHTML = `<p>Details not available.</p>`;
+        }
+      } catch (e) {
+        modalBody.innerHTML = `<p>Error loading content.</p>`;
+      }
+    }
+
+    // Ensure modal close works reliably:
+    document.getElementById("close-modal").onclick = (e) => {
+      e.stopPropagation();
+      document.getElementById("modal").style.display = "none";
+    };
+    // Prevent modal content clicks from closing modal:
+    document.querySelector(".modal-content").onclick = (e) => {
+      e.stopPropagation();
+    };
+    window.onclick = (e) => {
+      if (e.target === document.getElementById("modal")) {
+        document.getElementById("modal").style.display = "none";
+      }
+    };
+
+    // Node interaction
+    function findNodeAt(x, y) {
+      for (let i = 0; i < nodePositions.length; i++) {
+        const pos = getAnimatedPosition(i);
+        if (Math.sqrt((pos.x - x) ** 2 + (pos.y - y) ** 2) < 18) return i;
+      }
+      return null;
+    }
+    canvas.addEventListener("mousemove", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left, y = event.clientY - rect.top;
+      magnificationCenter = { x, y };
+      const foundIdx = findNodeAt(x, y);
+      hoveredNodeIdx = foundIdx;
+    });
+    canvas.addEventListener("mouseleave", () => {
+      hoveredNodeIdx = null;
+      magnificationCenter = null;
+    });
+    canvas.addEventListener("click", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left, y = event.clientY - rect.top;
+      const nodeIdx = findNodeAt(x, y);
+      if (nodeIdx !== null) showNodeModal(nodeIdx);
+    });
+    document.body.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("object-square") && e.target !== canvas) {
+        selectedObjectIdx = null;
+        document.querySelectorAll(".object-square").forEach(el => el.classList.remove("active"));
+      }
+    });
+
+    // Object menu
+    const menu = document.querySelector(".object-menu");
+    objects.forEach((object, oi) => {
+      const square = document.createElement("div");
+      square.className = "object-square";
+      square.textContent = object.name;
+      square.style.borderColor = object.color;
+      square.style.backgroundImage = `url('${object.iconImage}')`;
+      square.addEventListener("mouseenter", () => { hoverObjectIdx = oi; });
+      square.addEventListener("mouseleave", () => { hoverObjectIdx = null; });
+      square.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (selectedObjectIdx === oi) {
+          selectedObjectIdx = null;
+          square.classList.remove("active");
+        } else {
+          selectedObjectIdx = oi;
+          document.querySelectorAll(".object-square").forEach(el => el.classList.remove("active"));
+          square.classList.add("active");
+        }
+      });
+      menu.appendChild(square);
+    });
+
+  </script>
+</body>
+</html>
