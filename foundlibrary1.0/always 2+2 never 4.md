@@ -1,0 +1,1 @@
+while always at [[oneness]] always also striving for 2+2 and never 4. to incite, instigate, keep open, keep undefined, keep unordered, unmastered, post questions, never dictate answers, never foreclose, never assume fixity, always assume the straight line resolves into [[sqiuggle]]s of infinite curvature the further zoomed in
