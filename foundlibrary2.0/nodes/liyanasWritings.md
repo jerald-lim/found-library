@@ -14,7 +14,7 @@ Trying to understand this object raises more questions pertaining to the questio
 
 Is a found object mislaid or thrown out? Or is it a secret third thing?
 
-<img src ="images/liyanasWritings_files/Image_003.png" height="500px">
+<img src ="images/liyanasWritings_files/Image_003.png" height="700px">
 
 Now observe the observer and author her life based on a select few objects from a week’s worth of garbage. Remember that what is pictured is not all that she is; remember, again, that absence is more portentous than presence, in the same way that we do not look at the sky during a downpour, but before it, and after. 
 
@@ -24,4 +24,4 @@ Is it easier to glean a life from one object, or from a cacophony of ephemera, t
 
 As we shed objects, we seek to refine ourselves, to define our identities in a way that is more aligned with a vision (a mirage). We strive towards an intangible ideal by removing and adding the tangible. There can be no other way, it seems, but to constantly tap on the materiality and signification of objects to develop some sense of our own. And this is inescapable. We have always needed things to guide us; they will be here long after we are gone. •
 
-<img src ="images/liyanasWritings_files/Image_004.png" height="500px">
+<img src ="images/liyanasWritings_files/Image_004.png" height="700px">
