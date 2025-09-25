@@ -1,2 +1,2 @@
 
-<img src ="images/rainPoemDraft.jpg" height="700px">
+<img src ="images/rainPoemDraft.jpg" height="600px">
