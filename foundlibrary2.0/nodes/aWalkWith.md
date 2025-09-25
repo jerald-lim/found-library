@@ -19,8 +19,15 @@ I_S_L_A_N_D_S
 6 July – 22 August"
 
 And then these are some of the things that happened: 
-![[awalkwith_archivephoto5.mov]]
-![[awalkwith_archivephoto4.png]]
-![[awalkwith_archivephoto3.jpg]]
-![[awalkwith_archivephoto6.png]]
-![[awalkwith_archivephoto2.png]]![[a walk with participant’s worksheet .pdf]]
+<img src ="images/awalkwith_archivephoto5.mov" height="200px" width="200px">
+
+<img src ="images/awalkwith_archivephoto4.png" height="200px" width="200px">
+
+<img src ="images/awalkwith_archivephoto3.jpg" height="200px" width="200px">
+
+<img src ="images/awalkwith_archivephoto6.png" height="200px" width="200px">
+
+
+<img src ="awalkwith_archivephoto2.png" height="200px" width="200px">
+
+![[a walk with participant’s worksheet .pdf]]
