@@ -1,1 +1,2 @@
-should we even put anything in this?
+if being spineless is bad, how come we want boneless meat?
+
