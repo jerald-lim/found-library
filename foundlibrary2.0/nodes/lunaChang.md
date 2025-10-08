@@ -1,3 +1,3 @@
 Luna Chang (b. 2001) is an image-based artist working across themes of identity, gender, and urban practices. Their current practice encompasses care and agency through experimental modes of presenting photography. Luna has exhibited at Floating Projects, Art Outreach, DECK, and Objectifs Centre, and was awarded the Winston Oh Travelogue Award in 2024. Luna is a MA Global Cultural and Creative Industries student at SOAS and a BA (Hons) Fine Arts graduate from LASALLE (2024). Having worked with SIPF, Singapore Art Museum, Gagosian, Art Outreach, and the Singapore Pavilion at Venice Biennale 2024, they bring experience in exhibition management and programming.
 
-<img src ="images/IMG_7781 - Luna Chang.jpeg.jpg" height=400 width=auto>
+<img src ="images/IMG_7781 - Luna Chang.jpeg" height=400 width=auto>
