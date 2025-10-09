@@ -2,7 +2,7 @@ _We are enmeshed in a mesh of relations with each other and with non-human entit
 
 -               Timothy Morton, _The Ecological Thought_
 
-While "being" implies a fixed, stable state, "becoming" suggests a continuous process of transformation. In Donna Haraway’s “The Companion Species Manifesto”, she discusses how we _become-with_ other species, highlighting the fact that everyone and everything is always evolving in response to and in relation with one another.
+While "being" implies a fixed, stabl¨e state, "becoming" suggests a continuous process of transformation. In Donna Haraway’s “The Companion Species Manifesto”, she discusses how we _become-with_ other species, highlighting the fact that everyone and everything is always evolving in response to and in relation with one another.
 
 _Becoming ____ delves into this line of thought by inviting us to engage deeply with a collectively chosen object from the vicinity of Gillman Barracks. Through the act of “becoming” an object that is usually perceived as lifeless or mundane, we may begin to challenge our preconceived notions of selfhood and explore the porous boundaries between ourselves and the world. Shifting focus from human-centered narratives to the perspectives of objects themselves, we might to seriously consider the agency of objects and their role in shaping our identities.
 
