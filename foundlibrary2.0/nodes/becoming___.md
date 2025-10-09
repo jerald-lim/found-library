@@ -8,6 +8,16 @@ _Becoming ____ delves into this line of thought by inviting us to engage deeply 
 
 _Becoming ____ is not just an exhibition but a space for collective exploration and dialogue. In the studio space, multiple "stations" are set up to facilitate exploration and experimentation with the chosen object. In conjunction with the resident artist’s investigations, you are invited to engage in activities such as drawing, reflective writing, poetry, storytelling, photography, wearable artwork creation, sound recording, and other creative explorations. Together, we will probe the boundaries between human and non-human, subject and object.
 
-![[DSCF2270-2500.jpg]]![[DSCF2391.jpg]]![[DSCF2390.jpg]] ![[DSCF1565.jpg]]
+<img src ="images/becoming___image1.jpg" height=auto width=500>
 
-![[DSCF2274.jpg]]![[DSCF2292.jpg]]![[DSCF2350.jpg]]
+<img src ="images/becoming___image2.jpg" height=auto width=500>
+
+<img src ="images/becoming___image3.jpg" height=auto width=500>
+
+<img src ="images/becoming___image4.jpg" height=auto width=500>
+
+<img src ="images/becoming___image5.jpg" height=auto width=500>
+
+<img src ="images/becoming___image6.jpg" height=auto width=500>
+
+<img src ="images/becoming___image7.jpg" height=auto width=500>
