@@ -1,1 +1,1 @@
-<img src ="scan_20241031033953.jpg" height=auto width=500>
+<img src ="images/scan_20241031033953.jpg" height=auto width=500>
