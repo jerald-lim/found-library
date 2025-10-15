@@ -1,5 +1,3 @@
-Digging Around
-
 The Lycorpole® is a lamp post made of galvanised steel by what was once Lysaght Galvanising Services Sdn. Bhd. Malaysia, a collaboration between Malaysian entrepreneurs, Singaporean engineers, and the eponymous Lysaght company from Australia. The Lycorpole, a dependable and steady column mast, can range anywhere between three and sixty meters, illuminating anything from streetscapes to entire football stadiums. Lysaght Galvanising Services was listed as ‘Lysaght Galvanised Steel Berhad’ on Malaysia’s stock exchange on 28 June 1994, meaning that the steel label below, found buried in the sand dunes of a beach in Thailand, must originate between that date and 4 April 1979, when the original joint venture between three countries was incorporated.
 
 <img src ="images/liyanasWritings_files/Image_001.png" height="300px">
