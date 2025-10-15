@@ -165,14 +165,19 @@
     // Data
     const BG_IMAGE_SIZE = 600;
     const objects = [
-      { name: "", contains: ["duck", "dirty", "roadside", "bus 124", "isa", "a walk with", "fort canning", "ghee", "ghee's walk with worksheet", "phyllium", "float", "guang", "voiceless", "duck on a swim"], color: "#ffeb3b", iconImage: "images/rubberduck.png", bgImage: "images/rubberduck.png" },
-      { name: "", contains: ["isa", "singapore", "roadside", "rusty", "thin", "malaysia", "liyana", "digging around"],
-        color: "#808080",
+      { name: "", contains: ["duck", "dirty", "roadside", "bus 124", "isa", "a walk with", "fort canning", "ghee", "ghee's walk with worksheet", "phyllium", "float", "guang", "voiceless", "duck on a swim"], 
+      color: "#ffeb3b", 
+      iconImage: "images/rubberduck.png", 
+      bgImage: "images/rubberduck.png" 
+    },
+
+      { name: "", contains: ["isa", "singapore", "rusty", "liyana", "digging around", "borrowing log on the 6th of july 2024"],
+        color: "#F1FA91",
         iconImage: "images/metaltagfront.png",
         bgImage: "images/metaltagfront.png"
       },
 
-      { name: "", contains: ["salt lake city", "biking", "roadside", "feathers", "migration", "malaysia", "john marie", "feathered feathers"],
+      { name: "", contains: ["salt lake city", "biking", "roadside", "feathers", "migration", "john marie", "feathered feathers"],
         color: "#C19A6B",
         iconImage: "images/feather.png",
         bgImage: "images/feather.png"
@@ -226,8 +231,6 @@
       { id: "?", label: "?", category: "concept" },
       { id: "singapore", label: "singapore", category: "place" },
       { id: "rusty", label: "rusty", category: "concept" },
-      { id: "thin", label: "thin", category: "concept" },
-      { id: "malaysia", label: "malaysia", category: "place" },
       { id: "liyana", label: "liyana", category: "person" },
       { id: "digging around", label: "digging around", category: "visual" },
       { id: "jerald", label: "jerald", category: "person" },
@@ -280,7 +283,7 @@
     {from:"borrowing log on the 24th of july and august 2024",to:"guestbook"},
     {from: "jerald", to: "borrowing log on the 24th of july and august 2024"}, {from: "borrowing log on the 24th of july and august 2024", to: "victoria hertel"}, {from: "victoria hertel", to: "a very cool rock"}, {from: "a very cool rock", to: "victoria's artwork"},
     {from: "borrowing log on the 24th of july and august 2024", to: "luna chang"}, {from: "luna chang", to: "best friends"}, {from: "best friends", to: "luna's proposal"}, {from: "luna's proposal", to: "luna's artwork"},
-    {from:"feathers",to:"feathered feathers"},{from:"singapore",to:"malaysia"},{from:"duck",to:"dirty"},{from:"dirty",to:"roadside"},{from:"roadside",to:"bus 124"},{from:"bus 124",to:"isa"},{from:"isa",to:"a walk with"},{from:"a walk with",to:"fort canning"},{from:"fort canning",to:"ghee"},{from:"ghee",to:"ghee's walk with worksheet"},{from:"ghee's walk with worksheet",to:"phyllium"},{from:"phyllium",to:"float"},{from:"float",to:"guang"},{from:"guang",to:"voiceless"},{from:"voiceless",to:"duck on a swim"},{from:"duck on a swim",to:"?"},{from:"isa",to:"roadside"},{from:"singapore",to:"roadside"},{from:"roadside",to:"rusty"},{from:"rusty",to:"thin"},{from:"thin",to:"malaysia"},{from:"malaysia",to:"liyana"},{from:"liyana",to:"digging around"},{from:"digging around",to:"?"},{from:"jerald",to:"becoming ___"},{from:"becoming ___",to:"gillman barracks"},{from:"gillman barracks",to:"lock road"},{from:"lock road",to:"earth trail"},{from:"earth trail",to:"rain"},{from:"rain",to:"rain poem draft"},{from:"rain poem draft",to:"salt lake city"},{from:"salt lake city",to:"planting the rain"},{from:"planting the rain",to:"rhizocinema"},{from:"rhizocinema",to:"patternfaring"},{from:"patternfaring",to:"experimenting"},{from:"experimenting",to:"laughter"},{from:"laughter",to:"galloping cohort"},{from:"galloping cohort",to:"?"},{from:"qiutong",to:"lantau island"},{from:"lantau island",to:"fish"},{from:"fish",to:"bone"},{from:"bone",to:"val"},{from:"val",to:"a walk with"},{from:"a walk with",to:"pipes"},{from:"pipes",to:"teck"},{from:"teck",to:"wishbone"},{from:"wishbone",to:"teck's artwork"}
+    {from:"feathers",to:"feathered feathers"},{from:"duck",to:"dirty"},{from:"dirty",to:"roadside"},{from:"roadside",to:"bus 124"},{from:"bus 124",to:"isa"},{from:"isa",to:"a walk with"},{from:"a walk with",to:"fort canning"},{from:"fort canning",to:"ghee"},{from:"ghee",to:"ghee's walk with worksheet"},{from:"ghee's walk with worksheet",to:"phyllium"},{from:"phyllium",to:"float"},{from:"float",to:"guang"},{from:"guang",to:"voiceless"},{from:"voiceless",to:"duck on a swim"},{from:"duck on a swim",to:"?"},{from:"isa",to:"rusty"},{from:"rusty",to:"borrowing log on the 6th of july 2024"},{from:"borrowing log on the 6th of july 2024",to:"liyana"},{from:"liyana",to:"digging around"},{from:"digging around",to:"?"},{from:"jerald",to:"becoming ___"},{from:"becoming ___",to:"gillman barracks"},{from:"gillman barracks",to:"lock road"},{from:"lock road",to:"earth trail"},{from:"earth trail",to:"rain"},{from:"rain",to:"rain poem draft"},{from:"rain poem draft",to:"salt lake city"},{from:"salt lake city",to:"planting the rain"},{from:"planting the rain",to:"rhizocinema"},{from:"rhizocinema",to:"patternfaring"},{from:"patternfaring",to:"experimenting"},{from:"experimenting",to:"laughter"},{from:"laughter",to:"galloping cohort"},{from:"galloping cohort",to:"?"},{from:"qiutong",to:"lantau island"},{from:"lantau island",to:"fish"},{from:"fish",to:"bone"},{from:"bone",to:"val"},{from:"val",to:"a walk with"},{from:"a walk with",to:"pipes"},{from:"pipes",to:"teck"},{from:"teck",to:"wishbone"},{from:"wishbone",to:"teck's artwork"}
     ];
 
     // Draw/positioning state
