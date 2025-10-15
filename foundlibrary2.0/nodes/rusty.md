@@ -1,4 +1,4 @@
-"what a thin rectangle! shiny and with perfect rounded corners..." 
+"what a thin rectangle! with perfect rounded corners..." 
 
 i stoop up to pick it, then palm it around in my sweaty hands.
 
