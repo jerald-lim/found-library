@@ -1,4 +1,4 @@
-*starting chain: (ch x ?)*
+<i>starting chain: (ch x ?)</i>
 Supassara Ho
 2024
 
