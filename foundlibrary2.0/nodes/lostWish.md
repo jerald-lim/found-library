@@ -1,0 +1,1 @@
+I really hope to know [where the fishbone went] as well. You can call it a "lost wish" or a wish that has been left behind. Finder's keeper. I am hopeful a wish made with it might just come true 1 day.
