@@ -1,0 +1,1 @@
+Seeing lone feathers on the ground at random places and seeing them on birds living or not. Many potential functions on its one but serves a specific purpose when part of a whole. “Birds of the same feather fly together/become a feather duster”

@@ -1,0 +1,1 @@
+[maybe the feather is] finding out its purpose as a lone object? As a writing/drawing tool or a decorative piece- metaphorically fly because it is no longer able to physically. Or maybe it found lone feathers alike…
