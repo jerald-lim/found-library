@@ -1,0 +1,3 @@
+Based in Singapore, John Marie Andrada (b. 2001, Philippines) is a multidisciplinary artist whose work spans painting, installation, sculpture, photography and video. Growing up and taking root in a once foreign country, she moves between mediums and draws from personal recounts to reflect on the complexities of identity, time and the human experience. Defined by an ongoing investigation of how narrative and visual language can intertwine, her practice blends figuration and abstraction, driven by an intuitive, experimental approach to image-making.
+
+<img src ="johnmarieProfilePicture.jpg" height=auto width=500>
