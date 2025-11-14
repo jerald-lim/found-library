@@ -165,75 +165,85 @@
     // Data
     const BG_IMAGE_SIZE = 600;
     const objects = [
-      { name: "", contains: ["duck", "dirty", "roadside", "bus 124", "isa", "a walk with", "fort canning", "ghee", "ghee's walk with worksheet", "phyllium", "float", "guang", "voiceless", "duck on a swim", "islands", "starch"], 
+      { name: "duck", contains: ["duck", "dirty", "roadside", "bus 124", "isa", "islands", "a walk with", "fort canning", "ghee", "ghee's walk with worksheet", "phyllium", "float", "guang", "voiceless", "duck on a swim", "starch"], 
       color: "#ffeb3b", 
       iconImage: "images/rubberduck.png", 
       bgImage: "images/rubberduck.png" 
     },
 
-      { name: "", contains: ["isa", "rusty", "liyana", "digging around", "borrowing log on the 6th of july 2024", "islands", "starch"],
+      { name: "metalTag", contains: ["isa", "rusty", "islands", "borrowing log on the 6th of july 2024", "liyana", "digging around", "starch"],
         color: "#F1FA91",
         iconImage: "images/metaltagfront.png",
         bgImage: "images/metaltagfront.png"
       },
 
-      { name: "", contains: ["salt lake city", "biking", "roadside", "feathers", "migration", "john marie", "feathered feathers", "john marie artwork", "lone feather", "islands", "starch"],
+      { name: "feather", contains: ["jerald", "salt lake city", "islands", "john marie", "lone feather", "feathered feathers", "john marie artwork", "starch"],
         color: "#C19A6B",
         iconImage: "images/feather.png",
         bgImage: "images/feather.png"
       },
 
-      { name: "", contains: ["jerald", "becoming", "gillman barracks", "lock road", "earth trail", "rain", "rain poem draft", "salt lake city", "planting the rain", "rhizocinema", "patternfaring", "experimenting", "laughter", "galloping cohort", "islands"], 
+      { name: "rainLeaf", contains: ["jerald", "becoming", "earth trail", "rain", "rain poem draft", "salt lake city", "planting the rain", "rhizocinema", "patternfaring", "islands"], 
       color: "#80c904", 
       iconImage: "images/rainleaf.png", 
       bgImage: "images/rainleaf.png" 
     },
 
-      { name: "", contains: ["min's zine", "isa", "a party with", "between temple, crash, and vessel", "borrowing log on the 18th of july 2024", "borrowing log on the 24th of july and august 2024", "islands", "starch"],
+      { name: "blueBall", contains: ["isa", "islands", "a party with", "borrowing log on the 18th of july 2024",  "min's zine", "borrowing log on the 24th of july and august 2024", "starch", "between temple, crash, and vessel"],
        color: "#04D9FF", 
        iconImage: "images/blueball.png", 
        bgImage: "images/blueball2.png" 
       },
 
-      { name: "", contains: ["cristina's zine", "jerald", "a party with", "islands"],
+      { name: "pineCone", contains: ["jerald", "islands", "a party with", "borrowing log on the 18th of july 2024", "cristina's zine"],
        color: "#FFC0CB", 
        iconImage: "images/pinecone.png", 
        bgImage: "images/pinecone.png" 
       },
 
-      { name: "", contains: ["victoria hertel", "a very cool rock", "jerald", "borrowing log on the 24th of july and august 2024", "victoria's artwork", "islands", "starch"],
+      { name: "coolRock", contains: ["jerald", "islands", "borrowing log on the 24th of july and august 2024", "victoria hertel", "a very cool rock", "victoria's artwork",  "starch"],
         color: "#FCF9D9",
         iconImage: "images/averycoolrock.png",
         bgImage: "images/averycoolrock.png"
       },
 
-      { name: "", contains: ["supa's seed", "isa", "rubber", "supa borrow request", "supassara ho", "starch"],
+      { name: "rubberSeed", contains: ["isa", "rubber", "islands", "supa borrow request", "supassara ho", "supa's seed", "starch"],
         color: "#815b37",
         iconImage: "images/rubberseed.png",
         bgImage: "images/rubberseed.png"
       },
 
-      { name: "", contains: ["luna chang", "luna's proposal", "jerald", "borrowing log on the 24th of july and august 2024", "luna's artwork", "best friends", "islands", "starch"],
+      { name: "bikeBrake", contains: ["jerald", "islands", "borrowing log on the 24th of july and august 2024", "luna chang", "best friends", "luna's proposal", "luna's artwork", "starch"],
         color: "#D12E75",
         iconImage: "images/bikebrake.png",
         bgImage: "images/bikebrake.png"
       },
 
-      { name: "", contains: ["jerald", "l's zine", "a party with", "borrowing log on the 24th of july and august 2024", "borrowing log on the 18th of july 2024", "islands"], 
+      { name: "walle", contains: ["jerald", "islands", "a party with", "borrowing log on the 18th of july 2024", "l's zine", "borrowing log on the 24th of july and august 2024"], 
       color: "#FFFF00", 
       iconImage: "images/walle.png", 
       bgImage: "images/walle.png" },
 
-      { name: "", contains: ["qiutong", "lantau island", "fish", "bone", "val", "a walk with", "pipes", "teck", "wishbone", "teck's artwork", "lost wish", "islands", "starch"], 
+      { name: "fishBone", contains: ["qiutong", "lantau island", "islands", "borrowing log on the 18th of july 2024", "val", "a walk with", "a party with", "borrowing log on the 18th of july 2024", "teck", "wishbone", "teck's artwork", "lost wish", "starch"], 
       color: "#41add6", 
       iconImage: "images/pipefishbone.png", 
       bgImage: "images/wishfishbone.png" },
 
-      { name: "", contains: ["su ting", "jerald", "su ting's artwork", "hello"],
-       color: "#FFC0CB", 
-       iconImage: "images/pinecone.png", 
-       bgImage: "images/pinecone.png" 
-      }
+      { name: "cig", contains: ["isa", "islands", "borrowing log on the 10th and 11th of july 2024", "su ting", "su ting's artwork", "starch"],
+       color: "#FF0000", 
+       iconImage: "images/cig.png", 
+       bgImage: "images/cig.png" },
+
+      { name: "mapleLeaf", contains: ["jerald", "islands", "borrowing log on the 10th and 11th of july 2024", "gillian", "gillianWIP", "gillian", "gillians artwork", "starch"],
+       color: "#C46316", 
+       iconImage: "images/mapleLeaf.png", 
+       bgImage: "images/mapleLeaf.png" },
+
+      { name: "pearlPick", contains: ["isa", "islands", "borrowing log on the 10th and 11th of july 2024", "kenta", "kenta song", "kenta photos", "starch", "SAMres open studios", "borrow log on the 1st of november 2025"],
+       color: "#F6F1D5", 
+       iconImage: "images/pearlPick.png", 
+       bgImage: "images/pearlPick.png" }
+
 
     ];
     const nodes = [
@@ -258,8 +268,6 @@
       { id: "digging around", label: "digging around", category: "visual" },
       { id: "jerald", label: "jerald", category: "person" },
       { id: "becoming", label: "becoming ___", category: "concept" },
-      { id: "gillman barracks", label: "gillman barracks", category: "place" },
-      { id: "lock road", label: "lock road", category: "place" },
       { id: "earth trail", label: "earth trail", category: "place" },
       { id: "rain", label: "rain", category: "concept" },
       { id: "rain poem draft", label: "rain poem draft", category: "visual" },
@@ -267,26 +275,19 @@
       { id: "planting the rain", label: "planting the rain", category: "artwork" },
       { id: "rhizocinema", label: "rhizocinema", category: "concept" },
       { id: "patternfaring", label: "patternfaring", category: "concept" },
-      { id: "experimenting", label: "experimenting", category: "concept" },
-      { id: "laughter", label: "laughter", category: "concept" },
-      { id: "galloping cohort", label: "galloping cohort", category: "concept" },
       { id: "qiutong", label: "qiutong", category: "person" },
       { id: "lantau island", label: "lantau island", category: "place" },
-      { id: "fish", label: "fish", category: "visual" },
-      { id: "bone", label: "bone", category: "concept" },
       { id: "val", label: "val", category: "person" },
-      { id: "pipes", label: "pipes", category: "visual" },
       { id: "teck", label: "teck", category: "person" },
       { id: "wishbone", label: "wishbone", category: "visual" },
       { id: "teck's artwork", label: "pick me up & make a wish", category: "artwork" },
       { id: "a party with", label: "a party with", category: "event" },
       { id: "victoria hertel", label: "victoria hertel", category: "person"},
       { id: "luna chang", label: "luna chang", category: "person"},
-      { id: "feathers", label: "feathers", category: "visual"},
-      { id: "guestbook", label: "guestbook", category: "document"},
       { id: "borrowing log on the 6th of july 2024", label: "borrowing log on the 6th of july 2024", category: "document"},
       { id: "borrowing log on the 18th of july 2024", label: "borrowing log on the 18th of july 2024", category: "document"},
       { id: "borrowing log on the 24th of july and august 2024", label: "borrowing log on the 24th of july and august 2024", category: "document"},
+      { id: "borrowing log on the 10th and 11th of july 2024", label: "borrowing log on the 10th and 11th of july 2024", category: "document"},
       { id: "best friends", label: "best friends", category: "concept"},
       { id: "salient memory", label: "salient memory", category: "concept"},
       { id: "two birds", label: "two birds", category: "visual"},
@@ -313,18 +314,43 @@
       { id: "starch", label: "starch", category: "place"},
       { id: "islands", label: "I_S_L_A_N_D_S", category: "place"},
       { id: "su ting", label: "su ting", category: "person"},
-      { id: "hello", label: "hello", category: "concept"},
-      { id: "su ting's artwork", label: "same same but different", category: "artwork"}
+      { id: "su ting's artwork", label: "same same but different", category: "artwork"},
+      { id: "kenta", label: "kenta", category: "person"},
+      { id: "kenta song", label: "song", category: "artwork"},
+      { id: "kenta photos", label: "kenta's photos", category: "artwork"},
+      { id: "SAMres open studios", label: "SAMres cycle 3 open studios", category: "event"},
+      { id: "borrow log on the 1st of november 2025", label: "borrow log on the 1st of november 2025", category: "document"}
     ];
     const links = [
-    {from:"borrowing log on the 6th of july 2024",to:"a walk with"},
-    {from:"borrowing log on the 18th of july 2024",to:"a party with"},
-    {from:"borrowing log on the 6th of july 2024",to:"guestbook"},
-    {from:"borrowing log on the 18th of july 2024",to:"guestbook"},
-    {from:"borrowing log on the 24th of july and august 2024",to:"guestbook"},
-    {from: "jerald", to: "borrowing log on the 24th of july and august 2024"}, {from: "borrowing log on the 24th of july and august 2024", to: "victoria hertel"}, {from: "victoria hertel", to: "a very cool rock"}, {from: "a very cool rock", to: "victoria's artwork"},
-    {from: "borrowing log on the 24th of july and august 2024", to: "luna chang"}, {from: "luna chang", to: "best friends"}, {from: "best friends", to: "luna's proposal"}, {from: "luna's proposal", to: "luna's artwork"},
-    {from:"feathers",to:"feathered feathers"},{from:"duck",to:"dirty"},{from:"dirty",to:"roadside"},{from:"roadside",to:"bus 124"},{from:"bus 124",to:"isa"},{from:"isa",to:"a walk with"},{from:"a walk with",to:"fort canning"},{from:"fort canning",to:"ghee"},{from:"ghee",to:"ghee's walk with worksheet"},{from:"ghee's walk with worksheet",to:"phyllium"},{from:"phyllium",to:"float"},{from:"float",to:"guang"},{from:"guang",to:"voiceless"},{from:"voiceless",to:"duck on a swim"},{from:"duck on a swim",to:"questionMark"},{from:"isa",to:"rusty"},{from:"rusty",to:"borrowing log on the 6th of july 2024"},{from:"borrowing log on the 6th of july 2024",to:"liyana"},{from:"liyana",to:"digging around"},{from:"digging around",to:"questionMark"},{from:"jerald",to:"becoming"},{from:"becoming",to:"gillman barracks"},{from:"gillman barracks",to:"lock road"},{from:"lock road",to:"earth trail"},{from:"earth trail",to:"rain"},{from:"rain",to:"rain poem draft"},{from:"rain poem draft",to:"salt lake city"},{from:"salt lake city",to:"planting the rain"},{from:"planting the rain",to:"rhizocinema"},{from:"rhizocinema",to:"patternfaring"},{from:"patternfaring",to:"experimenting"},{from:"experimenting",to:"laughter"},{from:"laughter",to:"galloping cohort"},{from:"galloping cohort",to:"questionMark"},{from:"qiutong",to:"lantau island"},{from:"lantau island",to:"fish"},{from:"fish",to:"bone"},{from:"bone",to:"val"},{from:"val",to:"a walk with"},{from:"a walk with",to:"pipes"},{from:"pipes",to:"teck"},{from:"teck",to:"wishbone"},{from:"wishbone",to:"teck's artwork"}
+    //duck
+    {from:"duck",to:"dirty"},{from:"dirty",to:"roadside"},{from:"roadside",to:"bus 124"},{from:"bus 124",to:"isa"},{from:"isa",to: "islands"}, {from: "islands", to:"a walk with"},{from:"a walk with",to:"fort canning"},{from:"fort canning",to:"ghee"},{from:"ghee",to:"ghee's walk with worksheet"},{from:"ghee's walk with worksheet",to:"phyllium"},{from:"phyllium",to:"float"},{from:"float",to:"guang"},{from:"guang",to:"voiceless"},{from:"voiceless",to:"duck on a swim"},{from:"duck on a swim",to:"starch"},
+    //metalTag
+    {from:"isa",to:"rusty"},{from:"rusty", to: "islands"}, {from: "islands", to:"borrowing log on the 6th of july 2024"},{from:"borrowing log on the 6th of july 2024",to:"liyana"},{from:"liyana",to:"digging around"},{from:"digging around",to:"starch"},
+    //feather
+    {from:"jerald", to:"salt lake city"}, {from:"salt lake city", to:"islands"}, {from: "islands", to:"john marie"}, {from: "john marie", to:"lone feather"}, {from: "lone feather", to:"john marie artwork"}, {from: "john marie artwork", to: "starch"},
+    //rainLeaf
+    {from:"jerald",to:"becoming"},{from:"becoming",to:"earth trail"},{from:"earth trail",to:"rain"},{from:"rain",to:"rain poem draft"},{from:"rain poem draft",to:"salt lake city"},{from:"salt lake city",to:"planting the rain"},{from:"planting the rain",to:"rhizocinema"},{from:"rhizocinema",to:"patternfaring"}, {from: "patternfaring", to:"islands"},
+    //blueBall
+    {from: "isa", to: "islands"}, {from: "islands", to: "a party with"}, {from: "a party with", to: "borrowing log on the 18th of july 2024"}, {from: "borrowing log on the 18th of july 2024", to: "min's zine"}, {from: "min's zine", to: "borrowing log on the 24th of july and august 2024"}, {from: "borrowing log on the 24th of july and august 2024", to: "starch"}, {from: "starch", to: "between temple, crash, and vessel"},
+    //pineCone
+    {from: "jerald", to:"islands"}, {from: "islands", to:"a party with"}, {from: "a party with", to:"borrowing log on the 18th of july 2024"}, {from: "borrowing log on the 18th of july 2024", to: "cristina's zine"}, 
+    //coolRock
+    {from: "jerald", to: "islands"}, {from: "islands", to: "borrowing log on the 24th of july and august 2024"}, {from: "borrowing log on the 24th of july and august 2024", to: "victoria hertel"}, {from: "victoria hertel", to: "a very cool rock"}, {from: "a very cool rock", to: "victoria's artwork"}, {from: "victoria's artwork", to:"starch"},  
+    //rubberSeed
+    {from: "isa", to: "rubber"}, {from: "rubber", to: "islands"}, {from: "islands", to:"supa borrow request"}, {from: "supa borrow request", to: "supassara ho"}, {from: "supassara ho", to:"supa's seed"}, {from: "supa's seed", to: "starch"}, 
+    //bikeBrake
+    {from: "jerald", to: "islands"}, {from: "islands", to: "borrowing log on the 24th of july and august 2024"}, {from: "borrowing log on the 24th of july and august 2024", to: "luna chang"}, {from: "luna chang", to: "best friends"}, {from: "best friends", to: "luna's proposal"}, {from: "luna's proposal", to: "luna's artwork"}, {from: "luna's artwork", to: "starch"},
+    //walle
+    {from: "jerald", to: "islands"}, {from: "islands", to: "a party with"}, {from: "a party with", to: "borrowing log on the 18th of july 2024"}, {from: "borrowing log on the 18th of july 2024", to: "l's zine"}, {from: "l's zine", to: "borrowing log on the 24th of july and august 2024"},
+    //fishBone
+    {from:"qiutong",to:"lantau island"},{from:"lantau island",to: "islands"}, {from: "islands", to: "borrowing log on the 18th of july 2024"}, {from: "borrowing log on the 18th of july 2024", to: "val"}, {from:"val",to:"a walk with"},{from:"a walk with",to: "a party with"}, {from: "a party with", to: "borrowing log on the 18th of july 2024"}, {from: "borrowing log on the 18th of july 2024", to: "teck"}, {from:"teck",to:"wishbone"},{from:"wishbone",to:"teck's artwork"}, {from: "teck's artwork", to: "starch"}, {from:"starch",to:"lost wish"}, 
+    //cig
+    {from: "isa", to: "islands"}, {from: "islands", to: "borrowing log on the 10th and 11th of july 2024"}, {from: "borrowing log on the 10th and 11th of july 2024", to: "su ting"}, {from: "su ting", to: "su ting's artwork"}, {from: "su ting's artwork", to: "starch"},
+    //mapleLeaf
+    {from: "jerald", to: "islands"}, {from:  "islands", to: "borrowing log on the 10th and 11th of july 2024"}, {from: "borrowing log on the 10th and 11th of july 2024", to: "gillian"}, {from:  "gillian", to: "gillianWIP"}, {from: "gillianWIP", to: "gillians artwork"}, {from: "gillians artwork", to: "starch"},
+    //pearlPick
+    {from:"isa", to: "islands"}, {from: "islands", to: "borrowing log on the 10th and 11th of july 2024"}, {from: "borrowing log on the 10th and 11th of july 2024", to: "kenta"}, {from: "kenta", to:"kenta song"}, {from: "kenta song", to: "kenta photos"}, {from: "kenta photos", to: "starch"}, {from: "starch", to: "SAMres open studios"}, {from: "SAMres open studios", to: "borrow log on the 1st of november 2025"}
+
     ];
 
     // Draw/positioning state
