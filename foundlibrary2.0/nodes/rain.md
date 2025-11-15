@@ -1,5 +1,4 @@
 Placeholder for CSS rain (https://www.codewithrandom.com/2024/08/25/15-css-rain-effects/)
-
 Placeholder for flooded webring embed in modal (https://melonking.net/free/software/flood)
 
 <div class="google-weather-place">
